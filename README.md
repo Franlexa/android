@@ -61,3 +61,12 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.23.0")
 }
 
+## Pre-commit Hook for Detekt
+
+This repository uses a **pre-commit hook** to run `Detekt` automatically before every commit.
+
+### Installation
+
+1. Ensure `pre-commit` is installed:
+   ```bash
+   pip install pre-commit
