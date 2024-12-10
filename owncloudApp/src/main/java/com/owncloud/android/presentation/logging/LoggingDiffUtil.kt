@@ -20,18 +20,37 @@
 
 package com.owncloud.android.presentation.logging
 
+import android.util.Log
 import androidx.recyclerview.widget.DiffUtil
 import java.io.File
 
 class LoggingDiffUtil(private val oldList: List<File>, private val newList: List<File>) : DiffUtil.Callback() {
-    override fun getOldListSize(): Int = oldList.size
 
-    override fun getNewListSize(): Int = newList.size
+    companion object {
+        private const val TAG = "LoggingDiffUtil"
+    }
 
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldItemPosition == newItemPosition
+    override fun getOldListSize(): Int {
+        Log.d(TAG, "Old list size: ${oldList.size}")
+        return oldList.size
+    }
 
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldList[oldItemPosition].name === newList[newItemPosition].name
+    override fun getNewListSize(): Int {
+        Log.d(TAG, "New list size: ${newList.size}")
+        return newList.size
+    }
 
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val areSame = oldItemPosition == newItemPosition
+        Log.d(TAG, "Comparing items: Old position $oldItemPosition, New position $newItemPosition. Are items the same? $areSame")
+        return areSame
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldItemName = oldList[oldItemPosition].name
+        val newItemName = newList[newItemPosition].name
+        val areContentsSame = oldItemName == newItemName
+        Log.d(TAG, "Comparing contents: Old item name '$oldItemName', New item name '$newItemName'. Are contents the same? $areContentsSame")
+        return areContentsSame
+    }
 }
