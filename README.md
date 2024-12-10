@@ -38,3 +38,26 @@ Note: If you want to use the ownCloud production version you have to leave the b
 1. Go to ownCloud tab in F-Droid.
 2. Open versions section.
 3. Download the latest version that contains beta in the name.
+
+# Android Project with Static Code Analysis
+
+This repository uses **Detekt** for static code analysis to ensure clean and maintainable code.
+
+---
+
+## Installation & Configuration
+
+### Requirements
+Ensure you have **Gradle** installed.
+
+### Add Detekt
+To use Detekt in this project:
+
+1. **Add Detekt Plugin**:
+   Add this to your `build.gradle.kts`:
+
+```kotlin
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.23.0")
+}
+
