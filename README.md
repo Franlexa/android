@@ -19,7 +19,7 @@ Easy starting points are also reviewing [pull requests](https://github.com/owncl
 
 **Forum:** [#Android](https://central.owncloud.org/c/android)
 
-**License:** [GPLv2](https://github.com/owncloud/android/blob/master/LICENSE.txt)
+**License:** [GPLv2](https://github.com/Franlexa/android/blob/main/LICENSE.txt)
 
 ## Join testing!
 
